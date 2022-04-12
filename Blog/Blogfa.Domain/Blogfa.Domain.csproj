@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="UserAgg\" />
+    <None Remove="ArticleAgg\" />
+    <None Remove="CommentAgg\" />
+    <None Remove="RoleAgg\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UserAgg\" />
+    <Folder Include="ArticleAgg\" />
+    <Folder Include="CommentAgg\" />
+    <Folder Include="RoleAgg\" />
+  </ItemGroup>
+</Project>
