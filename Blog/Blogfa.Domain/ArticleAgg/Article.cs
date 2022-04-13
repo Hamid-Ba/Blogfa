@@ -24,7 +24,7 @@ namespace Blogfa.Domain.ArticleAgg
         public Article(string title, long userId, long categoryId, string slug, string image, SeoImage seoImage,
             string description, SeoData seoData, int viewerCount,IArticleDomainService articleService)
         {
-            Guard(slug, articleService);
+            Guard(title, description, slug, articleService);
 
             Title = title;
             UserId = userId;
@@ -41,7 +41,7 @@ namespace Blogfa.Domain.ArticleAgg
         public void Edit(string title, long categoryId, string slug, string image, SeoImage seoImage,
             string description, SeoData seoData, IArticleDomainService articleService)
         {
-            Guard(slug, articleService);
+            Guard(title,description,slug, articleService);
 
             Title = title;
             CategoryId = categoryId;
@@ -69,8 +69,11 @@ namespace Blogfa.Domain.ArticleAgg
 
         #endregion
 
-        private void Guard(string slug,IArticleDomainService articleService)
+        private void Guard(string title,string description,string slug,IArticleDomainService articleService)
         {
+            NullOrEmptyDomainDataException.CheckString(title, nameof(title));
+            NullOrEmptyDomainDataException.CheckString(description, nameof(description));
+
             if (articleService.IsSlugExist(slug))
                 throw new InvalidDomainDataException("This Slug Exists");
         }
