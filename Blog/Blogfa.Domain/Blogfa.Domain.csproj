@@ -12,6 +12,8 @@
     <None Remove="CommentAgg\" />
     <None Remove="RoleAgg\" />
     <None Remove="ArticleAgg\Services\" />
+    <None Remove="RoleAgg\Enums\" />
+    <None Remove="RoleAgg\Service\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UserAgg\" />
@@ -19,6 +21,8 @@
     <Folder Include="CommentAgg\" />
     <Folder Include="RoleAgg\" />
     <Folder Include="ArticleAgg\Services\" />
+    <Folder Include="RoleAgg\Enums\" />
+    <Folder Include="RoleAgg\Services\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Framework\Framework.csproj" />

@@ -64,6 +64,9 @@ namespace Blogfa.Domain.ArticleAgg
             var isLikeExist = Likes.Any(l => l.UserId == userId);
             if (isLikeExist) throw new InvalidDomainDataException("This User Has Already Liked This Article");
 
+            var like =new ArticleAgg.Like(userId);
+            like.ArticleId = Id;
+
             Likes.Add(new ArticleAgg.Like(userId));
         }
 
