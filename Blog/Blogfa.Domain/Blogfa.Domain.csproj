@@ -14,6 +14,8 @@
     <None Remove="ArticleAgg\Services\" />
     <None Remove="RoleAgg\Enums\" />
     <None Remove="RoleAgg\Service\" />
+    <None Remove="UserAgg\Enums\" />
+    <None Remove="UserAgg\Services\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UserAgg\" />
@@ -23,6 +25,8 @@
     <Folder Include="ArticleAgg\Services\" />
     <Folder Include="RoleAgg\Enums\" />
     <Folder Include="RoleAgg\Services\" />
+    <Folder Include="UserAgg\Enums\" />
+    <Folder Include="UserAgg\Services\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Framework\Framework.csproj" />
