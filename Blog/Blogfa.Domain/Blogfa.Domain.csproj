@@ -11,11 +11,16 @@
     <None Remove="ArticleAgg\" />
     <None Remove="CommentAgg\" />
     <None Remove="RoleAgg\" />
+    <None Remove="ArticleAgg\Services\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UserAgg\" />
     <Folder Include="ArticleAgg\" />
     <Folder Include="CommentAgg\" />
     <Folder Include="RoleAgg\" />
+    <Folder Include="ArticleAgg\Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Framework\Framework.csproj" />
   </ItemGroup>
 </Project>
