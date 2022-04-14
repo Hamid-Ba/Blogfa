@@ -8,13 +8,12 @@ namespace Blogfa.Application.CategoryAgg.Edit
         public EditCategoryCommandValidator()
         {
             RuleFor(r => r.Title)
-                .NotNull().NotEmpty()
-                .WithMessage(ValidationMessages.required("title"));
+               .NotNull().NotEmpty()
+               .WithMessage(ValidationMessages.required("عنوان"));
 
             RuleFor(r => r.Slug)
                 .NotNull().NotEmpty()
-                .WithMessage(ValidationMessages.required("slug"));
+                .WithMessage(ValidationMessages.required("اسلاگ"));
         }
     }
 }
-

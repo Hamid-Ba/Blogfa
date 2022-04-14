@@ -9,11 +9,11 @@ namespace Blogfa.Application.CategoryAgg.Create
         {
             RuleFor(r => r.Title)
                 .NotNull().NotEmpty()
-                .WithMessage(ValidationMessages.required("title"));
+                .WithMessage(ValidationMessages.required("عنوان"));
 
             RuleFor(r => r.Slug)
                 .NotNull().NotEmpty()
-                .WithMessage(ValidationMessages.required("slug"));
+                .WithMessage(ValidationMessages.required("اسلاگ"));
         }
     }
 }

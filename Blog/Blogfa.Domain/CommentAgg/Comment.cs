@@ -6,16 +6,16 @@ namespace Blogfa.Domain.CommentAgg
     public class Comment : AggregateRoot
 	{
         public long UserId { get; private set; }
-        public long ProductId { get; private set; }
+        public long ArticleId { get; private set; }
         public string Content { get; private set; }
         public bool IsConfirm { get; private set; }
 
-        public Comment(long userId, long productId, string content)
+        public Comment(long userId, long articleId, string content)
         {
             Guard(content);
 
             UserId = userId;
-            ProductId = productId;
+            ArticleId = articleId;
             Content = content;
             IsConfirm = false;
         }

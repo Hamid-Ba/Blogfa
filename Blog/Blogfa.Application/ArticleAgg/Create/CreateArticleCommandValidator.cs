@@ -18,7 +18,7 @@ namespace Blogfa.Application.ArticleAgg.Create
 
             RuleFor(r => r.Description)
                 .NotNull().NotEmpty()
-                .WithMessage(ValidationMessages.required("عنوان"));
+                .WithMessage(ValidationMessages.required("توضیحات"));
 
             RuleFor(r => r.ImageFile)
                 .JustImageFile();

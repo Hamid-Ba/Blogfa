@@ -9,16 +9,16 @@ namespace Blogfa.Application.ArticleAgg.Edit
         public EditArticleCommandValidator()
         {
             RuleFor(r => r.Title)
-                .NotNull().NotEmpty()
-                .WithMessage(ValidationMessages.required("title"));
+                          .NotNull().NotEmpty()
+                          .WithMessage(ValidationMessages.required("عنوان"));
 
             RuleFor(r => r.Slug)
                 .NotNull().NotEmpty()
-                .WithMessage(ValidationMessages.required("slug"));
+                .WithMessage(ValidationMessages.required("اسلاگ"));
 
             RuleFor(r => r.Description)
                 .NotNull().NotEmpty()
-                .WithMessage(ValidationMessages.required("description"));
+                .WithMessage(ValidationMessages.required("توضیحات"));
 
             RuleFor(r => r.ImageFile)
                 .JustImageFile();
