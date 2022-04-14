@@ -22,7 +22,7 @@ namespace Blogfa.Domain.ArticleAgg
         private Article() { }
 
         public Article(string title, long userId, long categoryId, string slug, string image, SeoImage seoImage,
-            string description, SeoData seoData, int viewerCount, IArticleDomainService articleService)
+            string description, SeoData seoData, IArticleDomainService articleService)
         {
             Guard(title, description, slug, articleService);
 
@@ -34,7 +34,7 @@ namespace Blogfa.Domain.ArticleAgg
             SeoImage = seoImage;
             Description = description;
             SeoData = seoData;
-            ViewerCount = viewerCount;
+            ViewerCount = 0;
             Likes = new();
         }
 
