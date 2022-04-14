@@ -20,6 +20,9 @@
     <None Remove="CommentAgg\Repository\" />
     <None Remove="RoleAgg\Repository\" />
     <None Remove="UserAgg\Repository\" />
+    <None Remove="CategoryAgg\" />
+    <None Remove="CategoryAgg\Services\" />
+    <None Remove="CategoryAgg\Repository\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UserAgg\" />
@@ -35,6 +38,9 @@
     <Folder Include="CommentAgg\Repository\" />
     <Folder Include="RoleAgg\Repository\" />
     <Folder Include="UserAgg\Repository\" />
+    <Folder Include="CategoryAgg\" />
+    <Folder Include="CategoryAgg\Services\" />
+    <Folder Include="CategoryAgg\Repository\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Framework\Framework.csproj" />

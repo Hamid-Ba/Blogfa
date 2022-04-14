@@ -6,4 +6,21 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Blogfa.Domain\Blogfa.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="ArticleAgg\" />
+    <None Remove="CommentAgg\" />
+    <None Remove="RoleAgg\" />
+    <None Remove="UserAgg\" />
+    <None Remove="CategoryAgg\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ArticleAgg\" />
+    <Folder Include="CommentAgg\" />
+    <Folder Include="RoleAgg\" />
+    <Folder Include="UserAgg\" />
+    <Folder Include="CategoryAgg\" />
+  </ItemGroup>
 </Project>
