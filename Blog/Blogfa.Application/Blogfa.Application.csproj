@@ -18,6 +18,7 @@
     <None Remove="ArticleAgg\Create\" />
     <None Remove="Microsoft.AspNetCore.Http" />
     <None Remove="ArticleAgg\Edit\" />
+    <None Remove="ArticleAgg\AddView\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ArticleAgg\" />
@@ -27,5 +28,6 @@
     <Folder Include="CategoryAgg\" />
     <Folder Include="ArticleAgg\Create\" />
     <Folder Include="ArticleAgg\Edit\" />
+    <Folder Include="ArticleAgg\AddView\" />
   </ItemGroup>
 </Project>
