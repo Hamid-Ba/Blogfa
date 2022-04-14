@@ -70,7 +70,7 @@ namespace Blogfa.Domain.ArticleAgg
             Likes.Add(like);
         }
 
-        public void DissLike(long userId)
+        public void DisLike(long userId)
         {
             var isLikeExist = Likes.Any(l => l.UserId == userId);
             if (isLikeExist) throw new InvalidDomainDataException("This User Hasn't Liked This Article at All");

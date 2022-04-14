@@ -5,7 +5,7 @@ using Framework.Application.Utils;
 
 namespace Blogfa.Application.ArticleAgg.Edit
 {
-    public class EditArticleCommandHandler : IBaseCommandHandler<EditArticleCommand>
+    internal class EditArticleCommandHandler : IBaseCommandHandler<EditArticleCommand>
     {
         private readonly IArticleRepository _articleRepository;
         private readonly IArticleDomainService _articleDomainService;

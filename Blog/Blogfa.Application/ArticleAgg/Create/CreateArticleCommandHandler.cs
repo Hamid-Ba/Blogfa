@@ -6,7 +6,7 @@ using Framework.Application.Utils;
 
 namespace Blogfa.Application.ArticleAgg.Create
 {
-    public class CreateArticleCommandHandler : IBaseCommandHandler<CreateArticleCommand>
+    internal class CreateArticleCommandHandler : IBaseCommandHandler<CreateArticleCommand>
     {
         private readonly IArticleRepository _articleRepository;
         private readonly IArticleDomainService _articleDomainService;
