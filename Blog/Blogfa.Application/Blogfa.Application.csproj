@@ -22,6 +22,7 @@
     <None Remove="ArticleAgg\Like\" />
     <None Remove="ArticleAgg\DisLike\" />
     <None Remove="CategoryAgg\Create\" />
+    <None Remove="CategoryAgg\Edit\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ArticleAgg\" />
@@ -35,5 +36,6 @@
     <Folder Include="ArticleAgg\Like\" />
     <Folder Include="ArticleAgg\DisLike\" />
     <Folder Include="CategoryAgg\Create\" />
+    <Folder Include="CategoryAgg\Edit\" />
   </ItemGroup>
 </Project>

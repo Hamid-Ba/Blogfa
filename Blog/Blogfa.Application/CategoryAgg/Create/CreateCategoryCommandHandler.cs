@@ -5,7 +5,7 @@ using Framework.Application;
 
 namespace Blogfa.Application.CategoryAgg.Create
 {
-    public class CreateCategoryCommandHandler : IBaseCommandHandler<CreateCategoryCommand>
+    internal class CreateCategoryCommandHandler : IBaseCommandHandler<CreateCategoryCommand>
     {
         private readonly ICategoryRepository _categoryRepository;
         private readonly ICategoryDomainService _categoryDomainService;
