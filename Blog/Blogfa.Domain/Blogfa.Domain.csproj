@@ -16,6 +16,10 @@
     <None Remove="RoleAgg\Service\" />
     <None Remove="UserAgg\Enums\" />
     <None Remove="UserAgg\Services\" />
+    <None Remove="ArticleAgg\Repository\" />
+    <None Remove="CommentAgg\Repository\" />
+    <None Remove="RoleAgg\Repository\" />
+    <None Remove="UserAgg\Repository\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UserAgg\" />
@@ -27,6 +31,10 @@
     <Folder Include="RoleAgg\Services\" />
     <Folder Include="UserAgg\Enums\" />
     <Folder Include="UserAgg\Services\" />
+    <Folder Include="ArticleAgg\Repository\" />
+    <Folder Include="CommentAgg\Repository\" />
+    <Folder Include="RoleAgg\Repository\" />
+    <Folder Include="UserAgg\Repository\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Framework\Framework.csproj" />
