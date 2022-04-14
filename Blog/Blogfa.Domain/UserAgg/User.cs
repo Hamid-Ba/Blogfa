@@ -17,8 +17,10 @@ namespace Blogfa.Domain.UserAgg
 
         public List<UserRole> Roles { get; set; }
 
+        private User() { }
+
         public User(string firstName, string lastName, string avatar, string password, string phoneNumber,
-            bool isActive, Gender gender,IUserDomainService userService)
+            bool isActive, Gender gender,List<UserRole> userRoles,IUserDomainService userService)
         {
             Guard(firstName, lastName, password, phoneNumber, userService);
 
@@ -29,18 +31,19 @@ namespace Blogfa.Domain.UserAgg
             PhoneNumber = phoneNumber;
             IsActive = isActive;
             Gender = gender;
-            Roles = new();
+            AddRoles(userRoles);
         }
 
         public static User Register(string firstName, string lastName, string password, string phoneNumber, IUserDomainService userService) =>
-            new(firstName, lastName, "NoImage.jpeg", password, phoneNumber, false, Gender.Male, userService);
+            new(firstName, lastName, "NoImage.jpeg", password, phoneNumber, false,Gender.Male,null!, userService);
 
-        public void Edit(string firstName, string lastName, string avatar, Gender gender)
+        public void Edit(string firstName, string lastName, string avatar, Gender gender,List<UserRole> userRoles)
         {
             FirstName = firstName;
             LastName = lastName;
             Avatar = avatar;
             Gender = gender;
+            EditRoles(userRoles);
         }
 
         public void Active() => IsActive = true;
@@ -54,6 +57,7 @@ namespace Blogfa.Domain.UserAgg
 
         public void AddRoles(List<UserRole> roles)
         {
+            if (roles is null) return;
             roles.ForEach(r => r.UserId = Id);
             Roles.AddRange(roles);
         }
