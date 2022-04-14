@@ -2,23 +2,23 @@
 using Framework.Application.Validation;
 using Framework.Application.Validation.FluentValidations;
 
-namespace Blogfa.Application.ArticleAgg.Create
+namespace Blogfa.Application.ArticleAgg.Edit
 {
-    public class CreateArticleCommandValidator : AbstractValidator<CreateArticleCommand>
+    public class EditArticleCommandValidator  : AbstractValidator<EditArticleCommand>
     {
-        public CreateArticleCommandValidator()
+        public EditArticleCommandValidator()
         {
             RuleFor(r => r.Title)
                 .NotNull().NotEmpty()
-                .WithMessage(ValidationMessages.required("عنوان"));
+                .WithMessage(ValidationMessages.required("title"));
 
             RuleFor(r => r.Slug)
                 .NotNull().NotEmpty()
-                .WithMessage(ValidationMessages.required("اسلاگ"));
+                .WithMessage(ValidationMessages.required("slug"));
 
             RuleFor(r => r.Description)
                 .NotNull().NotEmpty()
-                .WithMessage(ValidationMessages.required("عنوان"));
+                .WithMessage(ValidationMessages.required("description"));
 
             RuleFor(r => r.ImageFile)
                 .JustImageFile();

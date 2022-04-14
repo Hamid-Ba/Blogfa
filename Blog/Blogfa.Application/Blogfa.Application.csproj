@@ -17,6 +17,7 @@
     <None Remove="CategoryAgg\" />
     <None Remove="ArticleAgg\Create\" />
     <None Remove="Microsoft.AspNetCore.Http" />
+    <None Remove="ArticleAgg\Edit\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ArticleAgg\" />
@@ -25,5 +26,6 @@
     <Folder Include="UserAgg\" />
     <Folder Include="CategoryAgg\" />
     <Folder Include="ArticleAgg\Create\" />
+    <Folder Include="ArticleAgg\Edit\" />
   </ItemGroup>
 </Project>

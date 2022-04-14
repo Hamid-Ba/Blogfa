@@ -11,7 +11,7 @@ namespace Blogfa.Domain.ArticleAgg
         public long UserId { get; private set; }
         public long CategoryId { get; private set; }
         public string Slug { get; private set; }
-        public string Image { get; private set; }
+        public string ImageName { get; private set; }
         public SeoImage SeoImage { get; private set; }
         public string Description { get; private set; }
         public SeoData SeoData { get; private set; }
@@ -21,16 +21,16 @@ namespace Blogfa.Domain.ArticleAgg
 
         private Article() { }
 
-        public Article(string title, long userId, long categoryId, string slug, string image, SeoImage seoImage,
+        public Article(string title, long userId, long categoryId, string slug, string imageName, SeoImage seoImage,
             string description, SeoData seoData, IArticleDomainService articleService)
         {
-            Guard(title, description, slug, articleService);
+            Guard(title,imageName, description, slug, articleService);
 
             Title = title;
             UserId = userId;
             CategoryId = categoryId;
             Slug = slug;
-            Image = image;
+            ImageName = imageName;
             SeoImage = seoImage;
             Description = description;
             SeoData = seoData;
@@ -38,17 +38,17 @@ namespace Blogfa.Domain.ArticleAgg
             Likes = new();
         }
 
-        public void Edit(string title, long categoryId, string slug, string image, SeoImage seoImage,
+        public void Edit(string title, long categoryId, string slug, string imageName, SeoImage seoImage,
             string description, SeoData seoData, IArticleDomainService articleService)
         {
-            Guard(title, description, slug, articleService);
+            Guard(title,"Ignore", description, slug, articleService);
 
             Title = title;
             CategoryId = categoryId;
             Slug = slug;
 
-            if (!string.IsNullOrWhiteSpace(image))
-                Image = image;
+            if (!string.IsNullOrWhiteSpace(imageName))
+                ImageName = imageName;
 
             SeoImage = seoImage;
             Description = description;
@@ -82,9 +82,10 @@ namespace Blogfa.Domain.ArticleAgg
 
         #endregion
 
-        private void Guard(string title, string description, string slug, IArticleDomainService articleService)
+        private void Guard(string title,string imageName, string description, string slug, IArticleDomainService articleService)
         {
             NullOrEmptyDomainDataException.CheckString(title, nameof(title));
+            NullOrEmptyDomainDataException.CheckString(imageName, nameof(imageName));
             NullOrEmptyDomainDataException.CheckString(description, nameof(description));
 
             if (articleService.IsSlugExist(slug))
