@@ -29,6 +29,7 @@
     <None Remove="RoleAgg\Create\" />
     <None Remove="RoleAgg\Edit\" />
     <None Remove="UserAgg\Create\" />
+    <None Remove="UserAgg\Register\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ArticleAgg\" />
@@ -49,5 +50,6 @@
     <Folder Include="RoleAgg\Create\" />
     <Folder Include="RoleAgg\Edit\" />
     <Folder Include="UserAgg\Create\" />
+    <Folder Include="UserAgg\Register\" />
   </ItemGroup>
 </Project>
