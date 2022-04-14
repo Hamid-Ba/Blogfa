@@ -33,6 +33,7 @@
     <None Remove="UserAgg\Edit\" />
     <None Remove="UserAgg\Active\" />
     <None Remove="UserAgg\DeActive\" />
+    <None Remove="UserAgg\ChangePassword\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ArticleAgg\" />
@@ -57,5 +58,6 @@
     <Folder Include="UserAgg\Edit\" />
     <Folder Include="UserAgg\Active\" />
     <Folder Include="UserAgg\DeActive\" />
+    <Folder Include="UserAgg\ChangePassword\" />
   </ItemGroup>
 </Project>
