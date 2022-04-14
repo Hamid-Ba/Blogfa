@@ -25,6 +25,7 @@
     <None Remove="CategoryAgg\Edit\" />
     <None Remove="CommentAgg\Create\" />
     <None Remove="CommentAgg\Confirm\" />
+    <None Remove="CommentAgg\Reject\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ArticleAgg\" />
@@ -41,5 +42,6 @@
     <Folder Include="CategoryAgg\Edit\" />
     <Folder Include="CommentAgg\Create\" />
     <Folder Include="CommentAgg\Confirm\" />
+    <Folder Include="CommentAgg\Reject\" />
   </ItemGroup>
 </Project>
