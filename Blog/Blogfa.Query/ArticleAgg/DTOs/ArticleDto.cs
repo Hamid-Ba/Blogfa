@@ -1,4 +1,5 @@
-﻿using Framework.Domain.ValueObjects;
+﻿using Blogfa.Domain.ArticleAgg.Enums;
+using Framework.Domain.ValueObjects;
 using Framework.Query;
 using Framework.Query.Filter;
 
@@ -15,11 +16,12 @@ namespace Blogfa.Query.ArticleAgg.DTOs
         public string Description { get; set; }
         public SeoData SeoData { get; set; }
         public int ViewerCount { get; set; }
+        public ArticleStatus Status { get;  set; }
+        public DateTime GeorgianPublishDate { get; set; }
+        public string PublishDate { get; set; }
+        public string StatusDescription { get; set; }
 
         public ArticleCategoryDto Category { get; set; }
         public List<ArticleLikeDto> Likes { get; set; }
     }
-
-   
-    
 }

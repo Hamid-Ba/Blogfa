@@ -1,6 +1,7 @@
 ﻿using Blogfa.Domain.ArticleAgg;
 using Blogfa.Infrastructure.EfCore;
 using Blogfa.Query.ArticleAgg.DTOs;
+using Framework.Application;
 
 namespace Blogfa.Query.ArticleAgg
 {
@@ -33,7 +34,12 @@ namespace Blogfa.Query.ArticleAgg
                 SeoData = article.SeoData,
                 SeoImage = article.SeoImage,
                 Likes = MapLikes(article.Likes),
-                Category = category
+                Category = category,
+                CreationDate = article.CreationDate,
+                GeorgianPublishDate = article.PublishDate,
+                PublishDate = article.PublishDate.ToFarsi(),
+                Status = article.Status,
+                StatusDescription = article.StatusDescription
             };
         }
 

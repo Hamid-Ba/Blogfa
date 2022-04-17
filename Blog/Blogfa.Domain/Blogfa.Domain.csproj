@@ -23,6 +23,7 @@
     <None Remove="CategoryAgg\" />
     <None Remove="CategoryAgg\Services\" />
     <None Remove="CategoryAgg\Repository\" />
+    <None Remove="ArticleAgg\Enums\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UserAgg\" />
@@ -41,6 +42,7 @@
     <Folder Include="CategoryAgg\" />
     <Folder Include="CategoryAgg\Services\" />
     <Folder Include="CategoryAgg\Repository\" />
+    <Folder Include="ArticleAgg\Enums\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Framework\Framework.csproj" />

@@ -14,7 +14,7 @@ namespace Blogfa.Query.ArticleAgg.GetById
         public async Task<ArticleDto> Handle(GetArticleByIdQuery request, CancellationToken cancellationToken)
         {
             var article = await _context.Article.FirstOrDefaultAsync(a => a.Id == request.Id);
-            if (article is null) return new ArticleFilterResult();
+            if (article is null) return new ArticleDto();
 
             return article.Map(_context);
         }

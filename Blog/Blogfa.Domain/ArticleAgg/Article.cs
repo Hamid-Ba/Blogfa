@@ -1,4 +1,5 @@
-﻿using Blogfa.Domain.ArticleAgg.Services;
+﻿using Blogfa.Domain.ArticleAgg.Enums;
+using Blogfa.Domain.ArticleAgg.Services;
 using Framework.Domain;
 using Framework.Domain.Exceptions;
 using Framework.Domain.ValueObjects;
@@ -16,13 +17,16 @@ namespace Blogfa.Domain.ArticleAgg
         public string Description { get; private set; }
         public SeoData SeoData { get; private set; }
         public int ViewerCount { get; private set; }
+        public DateTime PublishDate { get; set; }
+        public ArticleStatus Status { get;private set; }
+        public string StatusDescription { get; private set; }
 
         public List<Like> Likes { get;private set; }
 
         private Article() { }
 
         public Article(string title, long userId, long categoryId, string slug, string imageName, SeoImage seoImage,
-            string description, SeoData seoData, IArticleDomainService articleService)
+            string description, SeoData seoData,DateTime publishDate, IArticleDomainService articleService)
         {
             Guard(title,imageName, description, slug, articleService);
 
@@ -35,11 +39,14 @@ namespace Blogfa.Domain.ArticleAgg
             Description = description;
             SeoData = seoData;
             ViewerCount = 0;
+            PublishDate = publishDate;
+            Status = ArticleStatus.Created;
+            StatusDescription = "Article Has Been Created";
             Likes = new();
         }
 
         public void Edit(string title, long categoryId, string slug, string imageName, SeoImage seoImage,
-            string description, SeoData seoData, IArticleDomainService articleService)
+            string description, SeoData seoData,DateTime publishDate, IArticleDomainService articleService)
         {
             Guard(title,"Ignore", description, slug, articleService);
 
@@ -53,9 +60,18 @@ namespace Blogfa.Domain.ArticleAgg
             SeoImage = seoImage;
             Description = description;
             SeoData = seoData;
+            PublishDate = publishDate;
+            Status = ArticleStatus.Modified;
+            StatusDescription = "Article Has Been Modified";
         }
 
         public void AddView() => ViewerCount++;
+
+        public void ChangeStatus(ArticleStatus status,string description)
+        {
+            Status = status;
+            StatusDescription = description;
+        }
 
         #region Like
 
