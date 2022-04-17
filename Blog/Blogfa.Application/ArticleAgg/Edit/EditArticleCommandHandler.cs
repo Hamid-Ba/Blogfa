@@ -23,7 +23,7 @@ namespace Blogfa.Application.ArticleAgg.Edit
 
             var imageName = Uploader.ImageUploader(request.ImageFile, DirectoryImages.Articles, request.ImageName);
             article.Edit(request.Title, request.CategoryId, request.Slug, imageName, request.SeoImage, request.Description
-                , request.SeoData, _articleDomainService);
+                , request.SeoData,request.PublishDate, _articleDomainService);
 
             await _articleRepository.SaveChangesAsync();
 
