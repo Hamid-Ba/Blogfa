@@ -26,10 +26,10 @@ namespace Blogfa.Infrastructure.EfCore
             modelBuilder.Entity<User>().HasQueryFilter(p => !p.IsDelete);
         }
 
-        public Article Article { get; set; }
-        public Category Category { get; set; }
-        public Comment Comment { get; set; }
-        public Role Role { get; set; }
-        public User User { get; set; }
+        public DbSet<Article> Article { get; set; }
+        public DbSet<Category> Category { get; set; }
+        public DbSet<Comment>  Comment { get; set; }
+        public DbSet<Role> Role { get; set; }
+        public DbSet<User> User { get; set; }
     }
 }

@@ -6,4 +6,25 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="ArticleAgg\" />
+    <None Remove="CategoryAgg\" />
+    <None Remove="CommentAgg\" />
+    <None Remove="RoleAgg\" />
+    <None Remove="UserAgg\" />
+    <None Remove="ArticleAgg\DTOs\" />
+    <None Remove="ArticleAgg\GetById\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ArticleAgg\" />
+    <Folder Include="CategoryAgg\" />
+    <Folder Include="CommentAgg\" />
+    <Folder Include="RoleAgg\" />
+    <Folder Include="UserAgg\" />
+    <Folder Include="ArticleAgg\DTOs\" />
+    <Folder Include="ArticleAgg\GetById\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Blogfa.Infrastructure.EfCore\Blogfa.Infrastructure.EfCore.csproj" />
+  </ItemGroup>
 </Project>

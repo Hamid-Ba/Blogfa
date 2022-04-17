@@ -17,7 +17,7 @@ namespace Blogfa.Domain.ArticleAgg
         public SeoData SeoData { get; private set; }
         public int ViewerCount { get; private set; }
 
-        public List<Like> Likes { get; set; }
+        public List<Like> Likes { get;private set; }
 
         private Article() { }
 
