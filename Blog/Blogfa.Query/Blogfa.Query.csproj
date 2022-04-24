@@ -29,6 +29,7 @@
     <None Remove="UserAgg\DTOs\" />
     <None Remove="UserAgg\GetAll\" />
     <None Remove="UserAgg\GetById\" />
+    <None Remove="UserAgg\GetByPhone\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ArticleAgg\" />
@@ -53,6 +54,7 @@
     <Folder Include="UserAgg\DTOs\" />
     <Folder Include="UserAgg\GetAll\" />
     <Folder Include="UserAgg\GetById\" />
+    <Folder Include="UserAgg\GetByPhone\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Blogfa.Infrastructure.EfCore\Blogfa.Infrastructure.EfCore.csproj" />

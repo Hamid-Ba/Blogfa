@@ -3,5 +3,5 @@ using Framework.Query;
 
 namespace Blogfa.Query.UserAgg.GetById
 {
-    public record GetByIdUserQuery(long Id) : IBaseQuery<UserDto>;
+    public record GetUserByIdQuery(long Id) : IBaseQuery<UserDto>;
 }
