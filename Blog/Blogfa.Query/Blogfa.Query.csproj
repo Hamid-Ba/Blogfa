@@ -18,6 +18,7 @@
     <None Remove="ArticleAgg\GetAll\" />
     <None Remove="CategoryAgg\DTOs\" />
     <None Remove="CategoryAgg\GetAll\" />
+    <None Remove="CategoryAgg\GetBy\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ArticleAgg\" />
@@ -31,6 +32,7 @@
     <Folder Include="ArticleAgg\GetAll\" />
     <Folder Include="CategoryAgg\DTOs\" />
     <Folder Include="CategoryAgg\GetAll\" />
+    <Folder Include="CategoryAgg\GetBy\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Blogfa.Infrastructure.EfCore\Blogfa.Infrastructure.EfCore.csproj" />
