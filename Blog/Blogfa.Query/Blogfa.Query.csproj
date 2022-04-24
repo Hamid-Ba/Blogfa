@@ -23,6 +23,8 @@
     <None Remove="CommentAgg\DTOs\" />
     <None Remove="CommentAgg\GetAll\" />
     <None Remove="CommentAgg\GetBy\" />
+    <None Remove="RoleAgg\DTOs\" />
+    <None Remove="RoleAgg\GetAll\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ArticleAgg\" />
@@ -41,6 +43,8 @@
     <Folder Include="CommentAgg\DTOs\" />
     <Folder Include="CommentAgg\GetAll\" />
     <Folder Include="CommentAgg\GetBy\" />
+    <Folder Include="RoleAgg\DTOs\" />
+    <Folder Include="RoleAgg\GetAll\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Blogfa.Infrastructure.EfCore\Blogfa.Infrastructure.EfCore.csproj" />

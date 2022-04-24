@@ -9,7 +9,7 @@ namespace Blogfa.Query.ArticleAgg
     {
         public static ArticleDto Map(this Article article, BlogfaContext context)
         {
-            if (article is null) return null;
+            if (article is null) return null!;
 
             var user = context.User.Select(u => new { Id = u.Id, FullName = $"{u.FirstName} {u.LastName}" })
                 .FirstOrDefault(u => u.Id == article.UserId);
@@ -25,7 +25,7 @@ namespace Blogfa.Query.ArticleAgg
             {
                 Id = article.Id,
                 UserId = article.UserId,
-                UserFullName = user.FullName,
+                UserFullName = user!.FullName,
                 Slug = article.Slug,
                 Title = article.Title,
                 ImageName = article.ImageName,
@@ -34,7 +34,7 @@ namespace Blogfa.Query.ArticleAgg
                 SeoData = article.SeoData,
                 SeoImage = article.SeoImage,
                 Likes = MapLikes(article.Likes),
-                Category = category,
+                Category = category!,
                 CreationDate = article.CreationDate,
                 GeorgianPublishDate = article.PublishDate,
                 PublishDate = article.PublishDate.ToFarsi(),
@@ -45,7 +45,7 @@ namespace Blogfa.Query.ArticleAgg
 
         public static ArticleDto MapResult(this Article article , BlogfaContext context)
         {
-            if (article is null) return null;
+            if (article is null) return null!;
 
             var user = context.User.Select(u => new { Id = u.Id, FullName = $"{u.FirstName} {u.LastName}" })
                 .FirstOrDefault(u => u.Id == article.UserId);
@@ -61,14 +61,14 @@ namespace Blogfa.Query.ArticleAgg
             {
                 Id = article.Id,
                 UserId = article.UserId,
-                UserFullName = user.FullName,
+                UserFullName = user!.FullName,
                 Slug = article.Slug,
                 Title = article.Title,
                 ImageName = article.ImageName,
                 ViewerCount = article.ViewerCount,
                 SeoImage = article.SeoImage,
                 Likes = MapLikes(article.Likes),
-                Category = category,
+                Category = category!,
                 GeorgianPublishDate = article.PublishDate,
                 PublishDate = article.PublishDate.ToFarsi(),
                 Status = article.Status,
