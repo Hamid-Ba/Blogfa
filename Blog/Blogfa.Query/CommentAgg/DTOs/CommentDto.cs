@@ -1,6 +1,4 @@
-﻿using System;
-using Framework.Query;
-using Framework.Query.Filter;
+﻿using Framework.Query;
 
 namespace Blogfa.Query.CommentAgg.DTOs
 {

@@ -30,5 +30,31 @@ namespace Blogfa.Query.CommentAgg
 				CreationDate = comment.CreationDate
 			};
         }
+
+		public static CommentDto Map(this Comment comment,BlogfaContext context)
+        {
+			if (comment is null) return null;
+
+			var user = context.User.Where(u => u.Id == comment.UserId)
+				.Select(u => new { FullName = $"{u.FirstName} {u.LastName}", Phone = u.PhoneNumber })
+				.FirstOrDefault();
+
+			var article = context.Article.Where(u => u.Id == comment.ArticleId)
+				.Select(u => new { Title = u.Title })
+				.FirstOrDefault();
+
+			return new CommentDto
+			{
+				Id = comment.Id,
+				ArticleId = comment.ArticleId,
+				ArticleTitle = article.Title,
+				UserId = comment.UserId,
+				UserFullName = user.FullName,
+				UserPhone = user.Phone,
+				IsConfirm = comment.IsConfirm,
+				Content = comment.Content,
+				CreationDate = comment.CreationDate
+			};
+		}
 	}
 }

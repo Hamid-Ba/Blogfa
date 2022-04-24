@@ -1,7 +1,5 @@
-﻿using System;
-using Blogfa.Query.CommentAgg.DTOs;
+﻿using Blogfa.Query.CommentAgg.DTOs;
 using Framework.Query;
-using Framework.Query.Filter;
 
 namespace Blogfa.Query.CommentAgg.GetAll
 {
