@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Blogfa.Query.ArticleAgg.GetById
 {
-    internal class GetArticleByIdQueryHandler : IBaseQueryHandler<GetArticleByIdQuery, ArticleDto>
+    public class GetArticleByIdQueryHandler : IBaseQueryHandler<GetArticleByIdQuery, ArticleDto>
     {
         private readonly BlogfaContext _context;
 

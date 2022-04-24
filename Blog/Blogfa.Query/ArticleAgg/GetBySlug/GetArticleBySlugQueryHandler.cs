@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Blogfa.Query.ArticleAgg.GetBySlug
 {
-    internal class GetArticleBySlugQueryHandler : IBaseQueryHandler<GetArticleBySlugQuery, ArticleDto>
+    public class GetArticleBySlugQueryHandler : IBaseQueryHandler<GetArticleBySlugQuery, ArticleDto>
     {
         private readonly BlogfaContext _context;
 

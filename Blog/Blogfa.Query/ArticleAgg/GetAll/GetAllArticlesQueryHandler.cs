@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Blogfa.Query.ArticleAgg.GetAll
 {
-    internal class GetAllArticlesQueryHandler : IBaseQueryHandler<GetAllArticlesQuery, ArticleFilterResult>
+    public class GetAllArticlesQueryHandler : IBaseQueryHandler<GetAllArticlesQuery, ArticleFilterResult>
     {
         private readonly BlogfaContext _context;
 
@@ -43,7 +43,7 @@ namespace Blogfa.Query.ArticleAgg.GetAll
             var result = new ArticleFilterResult()
             {
                 FilterParams = @params,
-                Data = await articles.Skip(skip).Take(@params.Take).Select(a => a.Map(_context)).ToListAsync()
+                Data = await articles.Skip(skip).Take(@params.Take).Select(a => a.MapResult(_context)).ToListAsync()
             };
 
             result.GeneratePaging(articles, @params.Take, @params.PageId);

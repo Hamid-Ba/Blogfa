@@ -16,6 +16,8 @@
     <None Remove="ArticleAgg\GetById\" />
     <None Remove="ArticleAgg\GetBySlug\" />
     <None Remove="ArticleAgg\GetAll\" />
+    <None Remove="CategoryAgg\DTOs\" />
+    <None Remove="CategoryAgg\GetAll\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ArticleAgg\" />
@@ -27,6 +29,8 @@
     <Folder Include="ArticleAgg\GetById\" />
     <Folder Include="ArticleAgg\GetBySlug\" />
     <Folder Include="ArticleAgg\GetAll\" />
+    <Folder Include="CategoryAgg\DTOs\" />
+    <Folder Include="CategoryAgg\GetAll\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Blogfa.Infrastructure.EfCore\Blogfa.Infrastructure.EfCore.csproj" />
