@@ -14,7 +14,7 @@ namespace Blogfa.Query.CategoryAgg.GetAll
         public async Task<List<CategoryDto>> Handle(GetAllCategoryQuery request, CancellationToken cancellationToken)
         {
             var categories = await _context.Category.ToListAsync();
-            return categories.Select(c => c.Map());
+            return categories.Select(c => c.Map()).ToList();
         }
     }
 }
