@@ -7,14 +7,25 @@ namespace Blogfa.Query.RoleAgg
 	{
 		public static RoleDto Map(this Role role)
         {
-			if (role is null) return null;
+			if (role is null) return null!;
 
 			return new RoleDto
 			{
 				Id = role.Id,
 				Title = role.Title,
-				CreationDate = role.CreationDate
+				CreationDate = role.CreationDate,
+				Permissions = MapPermissions(role.Permissions)
 			};
         }
+
+		public static List<PermissionDto> MapPermissions(List<RolePermission> permissions)
+		{
+			if (permissions is null) return null!;
+
+			return permissions.Select(p => new PermissionDto
+			{
+				Permission = p.Permission
+			}).ToList();
+		}
 	}
 }
