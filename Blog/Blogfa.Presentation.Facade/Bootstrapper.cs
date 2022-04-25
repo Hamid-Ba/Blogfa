@@ -1,6 +1,7 @@
 ﻿using System;
 using Blogfa.Presentation.Facade.ArticleAgg;
 using Blogfa.Presentation.Facade.CategoryAgg;
+using Blogfa.Presentation.Facade.CommentAgg;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Blogfa.Presentation.Facade
@@ -11,6 +12,7 @@ namespace Blogfa.Presentation.Facade
         {
             services.AddTransient<IArticleFacade, ArticleFacade>();
             services.AddTransient<ICategoryFacade, CategoryFacade>();
+            services.AddTransient<ICommentFacade, CommentFacade>();
         }
     }
 }
