@@ -10,4 +10,18 @@
     <ProjectReference Include="..\Blogfa.Application\Blogfa.Application.csproj" />
     <ProjectReference Include="..\Blogfa.Query\Blogfa.Query.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="ArticleAgg\" />
+    <None Remove="CategoryAgg\" />
+    <None Remove="CommentAgg\" />
+    <None Remove="RoleAgg\" />
+    <None Remove="UserAgg\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ArticleAgg\" />
+    <Folder Include="CategoryAgg\" />
+    <Folder Include="CommentAgg\" />
+    <Folder Include="RoleAgg\" />
+    <Folder Include="UserAgg\" />
+  </ItemGroup>
 </Project>
