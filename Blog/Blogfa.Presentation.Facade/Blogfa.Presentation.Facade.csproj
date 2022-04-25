@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Blogfa.Application\Blogfa.Application.csproj" />
+    <ProjectReference Include="..\Blogfa.Query\Blogfa.Query.csproj" />
+  </ItemGroup>
 </Project>

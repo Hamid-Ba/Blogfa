@@ -1,5 +1,4 @@
-﻿using System;
-using Blogfa.Domain.ArticleAgg.Repository;
+﻿using Blogfa.Domain.ArticleAgg.Repository;
 using Blogfa.Domain.CategoryAgg.Repository;
 using Blogfa.Domain.CommentAgg.Repository;
 using Blogfa.Domain.RoleAgg.Repository;
@@ -14,7 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Blogfa.Infrastructure.EfCore
 {
-	public static class Bootstrapper
+    public static class Bootstrapper
 	{
 		public static void EfCoreConfiure(this IServiceCollection services , string connectionString)
         {
