@@ -7,6 +7,7 @@ using Blogfa.Domain.CategoryAgg.Services;
 using Blogfa.Domain.RoleAgg.Services;
 using Blogfa.Domain.UserAgg.Services;
 using Blogfa.Infrastructure.EfCore;
+using Blogfa.Presentation.Facade;
 using Blogfa.Query.ArticleAgg;
 using FluentValidation;
 using MediatR;
@@ -29,6 +30,9 @@ namespace Blogfa.Infrastructure.Configuration
 
             //Configure Validation
             services.AddValidatorsFromAssembly(typeof(ArticleDomainService).Assembly);
+
+            //Configure Facade
+            services.FacadeConfigure();
 
             //Configure Domain Service
             services.AddTransient<IArticleDomainService, ArticleDomainService>();
