@@ -18,7 +18,6 @@
     <None Remove="ArticleAgg\GetAll\" />
     <None Remove="CategoryAgg\DTOs\" />
     <None Remove="CategoryAgg\GetAll\" />
-    <None Remove="CategoryAgg\GetBy\" />
     <None Remove="CategoryAgg\GetBySlug\" />
     <None Remove="CommentAgg\DTOs\" />
     <None Remove="CommentAgg\GetAll\" />
@@ -43,7 +42,6 @@
     <Folder Include="ArticleAgg\GetAll\" />
     <Folder Include="CategoryAgg\DTOs\" />
     <Folder Include="CategoryAgg\GetAll\" />
-    <Folder Include="CategoryAgg\GetBy\" />
     <Folder Include="CategoryAgg\GetBySlug\" />
     <Folder Include="CommentAgg\DTOs\" />
     <Folder Include="CommentAgg\GetAll\" />
