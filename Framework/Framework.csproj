@@ -15,6 +15,12 @@
     <None Remove="System.Drawing.Common" />
     <None Remove="Microsoft.EntityFrameworkCore" />
     <None Remove="Microsoft.AspNetCore.Mvc.Abstractions" />
+    <None Remove="Presentation\" />
+    <None Remove="Presentation\Api\" />
+    <None Remove="Presentation\Tools\" />
+    <None Remove="Microsoft.Extensions.Configuration" />
+    <None Remove="Microsoft.AspNetCore.Authentication.JwtBearer" />
+    <None Remove="Newtonsoft.Json" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MediatR" Version="10.0.1" />
@@ -25,5 +31,13 @@
     <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.6" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Presentation\" />
+    <Folder Include="Presentation\Api\" />
+    <Folder Include="Presentation\Tools\" />
   </ItemGroup>
 </Project>
