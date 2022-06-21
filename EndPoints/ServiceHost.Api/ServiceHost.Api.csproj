@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.6" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,6 +22,7 @@
     <None Remove="Infrastructures\ApiTools\" />
     <None Remove="Infrastructures\Securities\" />
     <None Remove="Microsoft.AspNetCore.Authentication.JwtBearer" />
+    <None Remove="Microsoft.VisualStudio.Web.CodeGeneration.Design" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Infrastructures\" />

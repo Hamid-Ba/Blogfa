@@ -1,5 +1,4 @@
-﻿using System;
-using Blogfa.Application.ArticleAgg.AddView;
+﻿using Blogfa.Application.ArticleAgg.AddView;
 using Blogfa.Application.ArticleAgg.ChangeStatus;
 using Blogfa.Application.ArticleAgg.Create;
 using Blogfa.Application.ArticleAgg.DisLike;
@@ -10,7 +9,7 @@ using Framework.Application;
 
 namespace Blogfa.Presentation.Facade.ArticleAgg
 {
-	public interface IArticleFacade
+    public interface IArticleFacade
 	{
         #region Commands
         Task<OperationResult> Edit(EditArticleCommand command);
