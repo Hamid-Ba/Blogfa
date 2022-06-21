@@ -10,11 +10,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ServiceHost.Api.Controllers
 {
-    public class ArticleController : BaseApiController
+    public class ArticleApiController : BaseApiController
     {
         private readonly IArticleFacade _articleFacade;
 
-        public ArticleController(IArticleFacade articleFacade) => _articleFacade = articleFacade;
+        public ArticleApiController(IArticleFacade articleFacade) => _articleFacade = articleFacade;
 
         [HttpGet]
         public async Task<ApiResult<ArticleFilterResult>> GetAll([FromQuery]ArticleFilterParam filter) => QueryResult(await _articleFacade.GetAll(filter));

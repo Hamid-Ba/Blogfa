@@ -34,4 +34,3 @@ namespace Blogfa.Application.UserAgg.Register
         }
     }
 }
-

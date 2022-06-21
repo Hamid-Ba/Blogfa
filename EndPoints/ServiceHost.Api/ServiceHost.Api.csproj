@@ -23,10 +23,14 @@
     <None Remove="Infrastructures\Securities\" />
     <None Remove="Microsoft.AspNetCore.Authentication.JwtBearer" />
     <None Remove="Microsoft.VisualStudio.Web.CodeGeneration.Design" />
+    <None Remove="DTOs\" />
+    <None Remove="DTOs\LoginDtos\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Infrastructures\" />
     <Folder Include="Infrastructures\ApiTools\" />
     <Folder Include="Infrastructures\Securities\" />
+    <Folder Include="DTOs\" />
+    <Folder Include="DTOs\LoginDtos\" />
   </ItemGroup>
 </Project>
