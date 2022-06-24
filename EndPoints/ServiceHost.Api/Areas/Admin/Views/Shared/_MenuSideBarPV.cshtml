@@ -23,23 +23,26 @@
                     <a asp-area="Admin" asp-controller="Dashboard" asp-action="Index" class="waves-effect active"><i class="md md-home"></i><span> داشبورد </span></a>
                 </li>
 
-
-                <li>
-                    <a asp-area="Admin" asp-controller="Discount" asp-action="Index" class="waves-effect"><i class="fa fa-cart-plus"></i><span> مقالات </span></a>
+                <li class="has_sub">
+                    <a class="waves-effect"><i class="fa fa-users"></i><span> سیستم مقالات </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a asp-area="Admin" asp-controller="Article" asp-action="Index">مقالات</a></li>
+                        <li><a asp-area="Admin" asp-controller="Category" asp-action="Index">گروه ها</a></li>
+                    </ul>
                 </li>
 
                 <li>
-                    <a asp-area="Admin" asp-controller="Visitor" asp-action="Index" class="waves-effect"><i class="fa fa-user"></i><span> کاربران </span></a>
+                    <a asp-area="Admin" asp-controller="Comment" asp-action="Index" class="waves-effect"><i class="fa fa-comment"></i><span> نظرات </span></a>
                 </li>
 
                 <li class="has_sub">
-                    <a class="waves-effect"><i class="fa fa-users"></i><span> سیستم اپراتور ها </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                    <a class="waves-effect"><i class="fa fa-users"></i><span> سیستم کاربری </span><span class="pull-right"><i class="md md-add"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a asp-area="Admin" asp-controller="Role" asp-action="Index">نقش ها</a></li>
-                        <li><a asp-area="Admin" asp-controller="Operator" asp-action="Index">اپراتورها</a></li>
+                        <li><a asp-area="Admin" asp-controller="Operator" asp-action="Index">کاربران</a></li>
                     </ul>
                 </li>
-                
+
             </ul>
             <div class="clearfix"></div>
         </div>
