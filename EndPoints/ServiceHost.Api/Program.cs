@@ -1,4 +1,6 @@
-﻿using Blogfa.Infrastructure.Configuration;
+﻿using System.Text.Encodings.Web;
+using System.Text.Unicode;
+using Blogfa.Infrastructure.Configuration;
 using Framework.Application;
 using Framework.Application.SecurityUtil.Hashing;
 using Framework.Presentation.Api;
@@ -8,8 +10,15 @@ using Microsoft.AspNetCore.Mvc;
 var builder = WebApplication.CreateBuilder(args);
 var service = builder.Services;
 
+
+#region html encoder
+
+service.AddSingleton<HtmlEncoder>(HtmlEncoder.Create(allowedRanges: new[] { UnicodeRanges.BasicLatin, UnicodeRanges.Arabic }));
+
+#endregion
+
 // Add services to the container.
-builder.Services.AddControllers().
+builder.Services.AddControllersWithViews().
     ConfigureApiBehaviorOptions(options =>
     {
         options.InvalidModelStateResponseFactory = context =>
@@ -47,11 +56,20 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseStaticFiles();
+
+app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapControllers();
+app.MapControllerRoute(
+        name: "areas",
+        pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}"
+    );
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
-
