@@ -1,0 +1,64 @@
+﻿@model Blogfa.Query.ArticleAgg.DTOs.ArticleDto
+
+@{
+    ViewData["Title"] = $"مقاله {Model.Title}";
+}
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h4 class="modal-title"> @ViewData["Title"] @Model.Title</h4>
+</div>
+
+
+<div class="modal-body">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="Title" class="control-label ">عنوان</label>
+                    <p>@Model.Title</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="Slug" class="control-label ">اسلاگ</label>
+                    <p>@Model.Slug</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="Slug" class="control-label ">گروه</label>
+                    <p>@Model.Slug</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="UserFullName" class="control-label ">نویسنده</label>
+                    <p>@Model.UserFullName</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="PublishDate" class="control-label ">تاریخ انتشار</label>
+                    <p>@Model.PublishDate</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label ">متن مقاله</label>
+                    <p>@Html.Raw(Model.Description)</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>
+    </div>
+</div>

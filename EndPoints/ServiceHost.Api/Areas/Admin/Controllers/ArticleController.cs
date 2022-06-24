@@ -14,6 +14,7 @@ namespace ServiceHost.Api.Areas.Admin.Controllers
         public ArticleController(IArticleFacade articleFacade) => _articleFacade = articleFacade;
 
         public async Task<IActionResult> Index() => View(await _articleFacade.GetAllForAdmin());
-        
+
+        public async Task<IActionResult> Detail(long id) => PartialView(await _articleFacade.GetBy(id));
     }
 }
