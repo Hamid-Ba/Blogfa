@@ -23,6 +23,7 @@ namespace Blogfa.Presentation.Facade.ArticleAgg
         #region Queries
         Task<ArticleDto> GetBy(long id);
         Task<ArticleDto> GetBy(string slug);
+        Task<List<ArticleDto>> GetAllForAdmin();
         Task<ArticleFilterResult> GetAll(ArticleFilterParam filter);
         #endregion
     }

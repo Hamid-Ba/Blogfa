@@ -6,6 +6,7 @@ using Blogfa.Application.ArticleAgg.Edit;
 using Blogfa.Application.ArticleAgg.Like;
 using Blogfa.Query.ArticleAgg.DTOs;
 using Blogfa.Query.ArticleAgg.GetAll;
+using Blogfa.Query.ArticleAgg.GetAllForAdmin;
 using Blogfa.Query.ArticleAgg.GetById;
 using Blogfa.Query.ArticleAgg.GetBySlug;
 using Framework.Application;
@@ -30,6 +31,8 @@ namespace Blogfa.Presentation.Facade.ArticleAgg
         public async Task<OperationResult> Edit(EditArticleCommand command) => await _mediator.Send(command);
 
         public async Task<ArticleFilterResult> GetAll(ArticleFilterParam filter) => await _mediator.Send(new GetAllArticlesQuery(filter));
+
+        public async Task<List<ArticleDto>> GetAllForAdmin() => await _mediator.Send(new GetAllForAdminArticleQuery());
 
         public async Task<ArticleDto> GetBy(long id) => await _mediator.Send(new GetArticleByIdQuery(id));
 
