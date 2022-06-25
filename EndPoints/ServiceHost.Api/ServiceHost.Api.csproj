@@ -31,6 +31,7 @@
     <None Remove="DTOs\LoginDtos\" />
     <None Remove="Microsoft.EntityFrameworkCore.Design" />
     <None Remove="Areas\Admin\Views\Article\" />
+    <None Remove="Areas\Admin\Views\Category\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Infrastructures\" />
@@ -39,5 +40,6 @@
     <Folder Include="DTOs\" />
     <Folder Include="DTOs\LoginDtos\" />
     <Folder Include="Areas\Admin\Views\Article\" />
+    <Folder Include="Areas\Admin\Views\Category\" />
   </ItemGroup>
 </Project>
