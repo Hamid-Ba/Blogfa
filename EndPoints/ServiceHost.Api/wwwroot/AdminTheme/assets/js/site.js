@@ -85,7 +85,7 @@ function CallBackHandler(data, action, form) {
             ShowMessage('پیام', data.message, 'info');
             break;
         case "Refresh":
-            if (data.isSucceeded) {
+            if (data.status == 200) {
                 window.location.reload();
             } else {
                 ShowMessage('مشکل سیستم', data.message ,'error');

@@ -1,6 +1,5 @@
 ﻿@model Blogfa.Application.CategoryAgg.Create.CreateCategoryCommand
 
-
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     <h4 class="modal-title">ایجاد دسته بندی جدید</h4>
@@ -35,7 +34,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label asp-for="SeoData.MetaKeyWords" class="control-label">کلمات کلیدی</label>
-                    <input type="text" class="form-control" asp-for="SeoData.MetaKeyWords">
+                    <input type="text" class="form-control" name="Keyword" asp-for="SeoData.MetaKeyWords">
                     <span asp-validation-for="SeoData.MetaKeyWords" class="error"></span>
                 </div>
             </div>
@@ -45,7 +44,7 @@
             <div class="col-md-12">
                 <div class="form-group no-margin">
                     <label asp-for="SeoData.MetaDescription" class="control-label">توضیحات</label>
-                    <textarea class="form-control autogrow" asp-for="SeoData.MetaDescription" onchange="fillField('SeoData.Description', 'SeoData.MetaDescription')"
+                    <textarea class="form-control autogrow" name="Desc" onchange="fillField('Desc', 'Title')"
                               style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 104px;"></textarea>
                     <span asp-validation-for="SeoData.MetaDescription" class="error"></span>
                 </div>
@@ -56,7 +55,7 @@
             <div class="col-md-12">
                 <div class="form-group no-margin">
                     <label asp-for="SeoData.MetaTitle" class="control-label">توضیحات متا</label>
-                    <textarea class="form-control autogrow" asp-for="SeoData.MetaTitle"
+                    <textarea class="form-control autogrow" name="Title" asp-for="SeoData.MetaTitle"
                               style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 104px;"></textarea>
                     <span asp-validation-for="SeoData.MetaTitle" class="error"></span>
                 </div>
