@@ -1,4 +1,6 @@
+using Blogfa.Application.CommentAgg.Confirm;
 using Blogfa.Application.CommentAgg.Create;
+using Blogfa.Application.CommentAgg.Reject;
 using Blogfa.Presentation.Facade.CommentAgg;
 using Blogfa.Query.CommentAgg.DTOs;
 using Framework.Presentation.Api;
@@ -20,5 +22,11 @@ namespace ServiceHost.Api.Controllers
 
         [HttpPost]
         public async Task<ApiResult> Create(CreateCommentCommand command) => CommandResult(await _commentFacade.Create(command));
+
+        [HttpPut("Confirm")]
+        public async Task<ApiResult> Confirm(ConfirmCommentCommand command) => CommandResult(await _commentFacade.Confirm(command));
+
+        [HttpPut("Reject")]
+        public async Task<ApiResult> Reject(RejectCommentCommand command) => CommandResult(await _commentFacade.Reject(command));
     }
 }
