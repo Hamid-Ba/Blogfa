@@ -1,3 +1,5 @@
+using Blogfa.Application.RoleAgg.Create;
+using Blogfa.Application.RoleAgg.Edit;
 using Blogfa.Presentation.Facade.RoleAgg;
 using Blogfa.Query.RoleAgg.DTOs;
 using Framework.Presentation.Api;
@@ -16,5 +18,11 @@ namespace ServiceHost.Api.Controllers
 
         [HttpGet("{id}")]
         public async Task<ApiResult<RoleDto>> GetBy(long id) => QueryResult(await _roleFacade.GetBy(id));
+
+        [HttpPost]
+        public async Task<ApiResult> Create(CreateRoleCommand command) => CommandResult(await _roleFacade.Create(command));
+
+        [HttpPut]
+        public async Task<ApiResult> Edit(EditRoleCommand command) => CommandResult(await _roleFacade.Edit(command));
     }
 }
