@@ -1,4 +1,5 @@
 using Blogfa.Application.ArticleAgg.AddView;
+using Blogfa.Application.ArticleAgg.ChangeStatus;
 using Blogfa.Application.ArticleAgg.Create;
 using Blogfa.Application.ArticleAgg.DisLike;
 using Blogfa.Application.ArticleAgg.Edit;
@@ -30,6 +31,9 @@ namespace ServiceHost.Api.Controllers
 
         [HttpPut]
         public async Task<ApiResult> Edit([FromForm] EditArticleCommand command) => CommandResult(await _articleFacade.Edit(command));
+
+        [HttpPut("changeStatus")]
+        public async Task<ApiResult> ChangeStatus(ChangeStatusArticleCommand command) => CommandResult(await _articleFacade.ChangeStatus(command));
 
         [HttpPut("like")]
         public async Task<ApiResult> Like(LikeArticleCommand command) => CommandResult(await _articleFacade.Like(command));
