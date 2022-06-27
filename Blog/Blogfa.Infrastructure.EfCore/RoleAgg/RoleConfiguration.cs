@@ -17,8 +17,6 @@ namespace Blogfa.Infrastructure.EfCore.RoleAgg
             builder.OwnsMany(p => p.Permissions, config =>
            {
                config.ToTable("Permissions", "role");
-
-               config.HasKey(k => k.Id);
            });
         }
     }

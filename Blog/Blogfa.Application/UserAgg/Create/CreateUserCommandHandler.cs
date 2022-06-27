@@ -22,10 +22,6 @@ namespace Blogfa.Application.UserAgg.Create
 
         public async Task<OperationResult> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
-            //Config Roles
-            var userRoles = new List<UserRole>();
-            request.Roles.ForEach(r => userRoles.Add(new UserRole(r)));
-
             //Config Avatar            
             var imageName = Uploader.ImageUploader(request.Avatar, DirectoryImages.Avatars, null!);
 
@@ -34,9 +30,20 @@ namespace Blogfa.Application.UserAgg.Create
 
             //Create User
             var user = new User(request.FirstName, request.LastName, imageName, password, request.PhoneNumber,
-                true, request.Gender, userRoles, _userDomainService);
+                true, request.Gender, _userDomainService);
 
             await _userRepository.AddEntityAsync(user);
+
+            //Add Roles
+            List<UserRole> Roles = new List<UserRole>();
+
+            request.Roles.ForEach(r =>
+            {
+                var role = new UserRole(r);
+                Roles.Add(role);
+            });
+
+            user.AddRoles(Roles);
             await _userRepository.SaveChangesAsync();
 
             return OperationResult.Success();

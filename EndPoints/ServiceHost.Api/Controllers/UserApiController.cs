@@ -20,10 +20,10 @@ namespace ServiceHost.Api.Controllers
         public async Task<ApiResult<UserFilterResult>> GetAll([FromQuery] UserFilterParam filter) => QueryResult(await _userFacade.GetAll(filter));
 
         [HttpGet("{id}")]
-        public async Task<ApiResult<UserDto>> GetBy(long id) => QueryResult(await _userFacade.GetBy(id));
+        public async Task<ApiResult<UserDto>> GetById(long id) => QueryResult(await _userFacade.GetBy(id));
 
-        [HttpGet("{phoneNumber}")]
-        public async Task<ApiResult<UserDto>> GetBy(string phoneNumber) => QueryResult(await _userFacade.GetBy(phoneNumber));
+        [HttpGet("phone/{phoneNumber}")]
+        public async Task<ApiResult<UserDto>> GetByPhone(string phoneNumber) => QueryResult(await _userFacade.GetBy(phoneNumber));
 
         [HttpPost]
         public async Task<ApiResult> Create([FromForm] CreateUserCommand command) => CommandResult(await _userFacade.Create(command));

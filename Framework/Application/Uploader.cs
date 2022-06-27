@@ -7,7 +7,7 @@ namespace Framework.Application
     {
         public static string ImageUploader(IFormFile file, string path, string currentImage)
         {
-            if (file is null || !file.IsImage()) return "";
+            if (file is null) return "";
 
             var directoryPath = $"{Directory.GetCurrentDirectory()}\\wwwroot\\Images\\{path}";
 

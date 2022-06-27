@@ -1,9 +1,8 @@
 ﻿using Blogfa.Domain.RoleAgg.Enums;
-using Framework.Domain;
 
 namespace Blogfa.Domain.RoleAgg
 {
-    public class RolePermission : BaseEntity
+    public class RolePermission
 	{
         public long RoleId { get;internal set; }
         public Permission Permission { get; set; }
