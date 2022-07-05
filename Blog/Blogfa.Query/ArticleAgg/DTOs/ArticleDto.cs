@@ -12,9 +12,9 @@ namespace Blogfa.Query.ArticleAgg.DTOs
         public string UserFullName { get; set; }
         public string Slug { get; set; }
         public string ImageName { get; set; }
-        public SeoImage SeoImage { get;set; }
+        //public SeoImage SeoImage { get;set; }
         public string Description { get; set; }
-        public SeoData SeoData { get; set; }
+        //public SeoData SeoData { get; set; }
         public int ViewerCount { get; set; }
         public ArticleStatus Status { get;  set; }
         public DateTime GeorgianPublishDate { get; set; }

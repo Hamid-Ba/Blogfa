@@ -13,6 +13,16 @@ namespace Blogfa.Query.ArticleAgg.GetAll
 
         public async Task<ArticleFilterResult> Handle(GetAllArticlesQuery request, CancellationToken cancellationToken)
         {
+            var user =await _context.User.Select(u => new { Id = u.Id, FullName = $"{u.FirstName} {u.LastName}" })
+                .ToListAsync();
+
+            var mapCategory = await _context.Category.Select(c => new ArticleCategoryDto
+            {
+                Id = c.Id,
+                Title = c.Title,
+                Slug = c.Slug
+            }).ToListAsync();
+
             var @params = request.FilterParams;
             var articles = _context.Article.AsQueryable();
 
@@ -43,8 +53,11 @@ namespace Blogfa.Query.ArticleAgg.GetAll
             var result = new ArticleFilterResult()
             {
                 FilterParams = @params,
-                Data = await articles.Skip(skip).Take(@params.Take).Select(a => a.MapResult(_context)).ToListAsync()
+                Data = await articles.Skip(skip).Take(@params.Take).Select(a => a.MapResult()).ToListAsync()
             };
+
+            result.Data.ForEach(d => d.UserFullName = user.Find(u => u.Id == d.UserId)?.FullName!);
+            result.Data.ForEach(d => d.Category = mapCategory.Find(u => u.Id == d.Category.Id)!);
 
             result.GeneratePaging(articles, @params.Take, @params.PageId);
 

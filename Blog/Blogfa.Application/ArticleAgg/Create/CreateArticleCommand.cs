@@ -5,6 +5,6 @@ using Microsoft.AspNetCore.Http;
 
 namespace Blogfa.Application.ArticleAgg.Create
 {
-    public record CreateArticleCommand(string Title, long UserId, long CategoryId, string Slug, IFormFile ImageFile, SeoImage SeoImage,
-            string Description,DateTime PublishDate, SeoData SeoData) : IBaseCommand;
+    public record CreateArticleCommand(string Title, long UserId, long CategoryId, string Slug, IFormFile ImageFile,
+            string Description,DateTime PublishDate) : IBaseCommand;
 }

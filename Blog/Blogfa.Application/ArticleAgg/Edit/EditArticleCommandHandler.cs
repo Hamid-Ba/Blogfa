@@ -22,8 +22,8 @@ namespace Blogfa.Application.ArticleAgg.Edit
             if (article is null) return OperationResult.NotFound();
 
             var imageName = Uploader.ImageUploader(request.ImageFile, DirectoryImages.Articles, request.ImageName);
-            article.Edit(request.Title, request.CategoryId, request.Slug, imageName, request.SeoImage, request.Description
-                , request.SeoData,request.PublishDate, _articleDomainService);
+            article.Edit(request.Title, request.CategoryId, request.Slug, imageName, request.Description
+                ,request.PublishDate, _articleDomainService);
 
             await _articleRepository.SaveChangesAsync();
 

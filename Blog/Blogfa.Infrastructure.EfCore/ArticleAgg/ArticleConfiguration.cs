@@ -18,26 +18,26 @@ namespace Blogfa.Infrastructure.EfCore.ArticleAgg
             builder.Property(p => p.ImageName).HasMaxLength(225).IsRequired();
             builder.Property(p => p.Description).IsRequired();
 
-            builder.OwnsOne(c => c.SeoData, config =>
-           {
-               config.Property(b => b.MetaDescription)
-                   .HasMaxLength(500)
-                   .HasColumnName("MetaDescription");
+           // builder.OwnsOne(c => c.SeoData, config =>
+           //{
+           //    config.Property(b => b.MetaDescription)
+           //        .HasMaxLength(500)
+           //        .HasColumnName("MetaDescription");
 
-               config.Property(b => b.MetaTitle)
-                   .HasMaxLength(500)
-                   .HasColumnName("MetaTitle");
+           //    config.Property(b => b.MetaTitle)
+           //        .HasMaxLength(500)
+           //        .HasColumnName("MetaTitle");
 
-               config.Property(b => b.MetaKeyWords)
-                   .HasMaxLength(500)
-                   .HasColumnName("MetaKeyWords");
-           });
+           //    config.Property(b => b.MetaKeyWords)
+           //        .HasMaxLength(500)
+           //        .HasColumnName("MetaKeyWords");
+           //});
 
-            builder.OwnsOne(c => c.SeoImage, config =>
-           {
-               config.Property(c => c.Title).HasMaxLength(75).HasColumnName("ImageTitle");
-               config.Property(c => c.Alternative).HasMaxLength(100).HasColumnName("ImageAlternative");
-           });
+           // builder.OwnsOne(c => c.SeoImage, config =>
+           //{
+           //    config.Property(c => c.Title).HasMaxLength(75).HasColumnName("ImageTitle");
+           //    config.Property(c => c.Alternative).HasMaxLength(100).HasColumnName("ImageAlternative");
+           //});
 
             builder.OwnsMany(c => c.Likes, config =>
            {

@@ -21,8 +21,8 @@ namespace Blogfa.Application.ArticleAgg.Create
         {
             var imageName = Uploader.ImageUploader(request.ImageFile, DirectoryImages.Articles, null!);
 
-            var article = new Article(request.Title, request.UserId, request.CategoryId, request.Slug, imageName, request.SeoImage, request.Description,
-                request.SeoData,request.PublishDate, _articleDomainService);
+            var article = new Article(request.Title, request.UserId, request.CategoryId, request.Slug, imageName, request.Description
+                ,request.PublishDate, _articleDomainService);
 
             await _articleRepository.AddEntityAsync(article);
             await _articleRepository.SaveChangesAsync();

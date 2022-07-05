@@ -20,8 +20,8 @@ namespace Blogfa.Application.ArticleAgg.Create
                 .NotNull().NotEmpty()
                 .WithMessage(ValidationMessages.required("توضیحات"));
 
-            RuleFor(r => r.ImageFile)
-                .JustImageFile();
+            //RuleFor(r => r.ImageFile)
+            //    .JustImageFile();
         }
     }
 }

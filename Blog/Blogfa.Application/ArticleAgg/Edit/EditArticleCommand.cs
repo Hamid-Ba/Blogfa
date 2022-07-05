@@ -5,6 +5,6 @@ using Microsoft.AspNetCore.Http;
 
 namespace Blogfa.Application.ArticleAgg.Edit
 {
-    public record EditArticleCommand(long Id,string Title, long CategoryId, string Slug, IFormFile ImageFile ,string ImageName, SeoImage SeoImage,
-			string Description, SeoData SeoData, DateTime PublishDate) : IBaseCommand;
+    public record EditArticleCommand(long Id,string Title, long CategoryId, string Slug, IFormFile ImageFile ,string ImageName,
+			string Description, DateTime PublishDate) : IBaseCommand;
 }

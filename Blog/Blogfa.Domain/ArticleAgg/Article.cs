@@ -13,9 +13,9 @@ namespace Blogfa.Domain.ArticleAgg
         public long CategoryId { get; private set; }
         public string Slug { get; private set; }
         public string ImageName { get; private set; }
-        public SeoImage SeoImage { get; private set; }
+        //public SeoImage SeoImage { get; private set; }
         public string Description { get; private set; }
-        public SeoData SeoData { get; private set; }
+        //public SeoData SeoData { get; private set; }
         public int ViewerCount { get; private set; }
         public DateTime PublishDate { get; set; }
         public ArticleStatus Status { get;private set; }
@@ -25,8 +25,8 @@ namespace Blogfa.Domain.ArticleAgg
 
         private Article() { }
 
-        public Article(string title, long userId, long categoryId, string slug, string imageName, SeoImage seoImage,
-            string description, SeoData seoData,DateTime publishDate, IArticleDomainService articleService)
+        public Article(string title, long userId, long categoryId, string slug, string imageName,
+            string description,DateTime publishDate, IArticleDomainService articleService)
         {
             Guard(title,imageName, description, slug, articleService);
 
@@ -35,9 +35,9 @@ namespace Blogfa.Domain.ArticleAgg
             CategoryId = categoryId;
             Slug = slug;
             ImageName = imageName;
-            SeoImage = seoImage;
+            //SeoImage = seoImage;
             Description = description;
-            SeoData = seoData;
+            //SeoData = seoData;
             ViewerCount = 0;
             PublishDate = publishDate;
             Status = ArticleStatus.Created;
@@ -45,8 +45,8 @@ namespace Blogfa.Domain.ArticleAgg
             Likes = new();
         }
 
-        public void Edit(string title, long categoryId, string slug, string imageName, SeoImage seoImage,
-            string description, SeoData seoData,DateTime publishDate, IArticleDomainService articleService)
+        public void Edit(string title, long categoryId, string slug, string imageName,
+            string description,DateTime publishDate, IArticleDomainService articleService)
         {
             Guard(title,"Ignore", description, slug, articleService);
 
@@ -57,9 +57,9 @@ namespace Blogfa.Domain.ArticleAgg
             if (!string.IsNullOrWhiteSpace(imageName))
                 ImageName = imageName;
 
-            SeoImage = seoImage;
+            //SeoImage = seoImage;
             Description = description;
-            SeoData = seoData;
+            //SeoData = seoData;
             PublishDate = publishDate;
             Status = ArticleStatus.Modified;
             StatusDescription = "Article Has Been Modified";
